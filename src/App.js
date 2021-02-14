@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import {IconSettings, Button } from '@salesforce/design-system-react';
+
 
 function App() {
 
@@ -12,6 +11,36 @@ function App() {
   return (
     <div className="App">
       <h1>IA 2021!</h1>
+      <IconSettings iconPath="/assets/icons">
+				<div className="slds-x-small-buttons_horizontal">
+					<Button label="Brand" variant="brand" />
+
+					<Button
+						disabled
+						label="Disabled"
+						onClick={() => {
+							console.log('Disabled Button Clicked');
+						}}
+						variant="brand"
+					/>
+
+					<Button label="Destructive" variant="destructive" />
+
+					<Button label="Outline Brand" variant="outline-brand" />
+
+					<div
+						style={{
+							backgroundColor: '#16325c',
+							padding: '10px',
+							marginLeft: '5px',
+							display: 'inline-block',
+						}}
+						className="-m-horizontal--small"
+					>
+						<Button inverse label="Inverse" variant="base" />
+					</div>
+				</div>
+			</IconSettings>
     </div>
   );
 }
