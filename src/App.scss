@@ -13,14 +13,14 @@ $desktop: 1024px;
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $tablet) {
   .App {
     width: 768px; 
     border-color: yellow;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: $desktop) {
   .App {
     width: $desktop; 
     border-color: green;
