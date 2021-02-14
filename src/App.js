@@ -1,46 +1,65 @@
-import logo from './logo.svg';
+import { useState} from 'react';
 import './App.css';
 import {IconSettings, Button } from '@salesforce/design-system-react';
+import Landing from './Views/Landing/index';
+import Questions from './Views/Questions/index';
+import Summary from './Views/Summary/index';
 
 
 function App() {
 
-  const progress = 20;
-  const value="20";
+  const totalSteps = 3;
+
+  const [step, setStep] = useState(0);
+
+  const resetSteps = () => {
+    setStep(0)
+  }
+
+  const nextStep = () => {
+    setStep((step < totalSteps)? step + 1: step)
+  }
+
+  let currentStep = <Landing />;
+
+  switch(step) {
+    case 0:
+      currentStep = <Landing />;
+      break;
+    case 1:
+      currentStep = <Questions />;
+      break;
+    case 2:
+      currentStep = <Summary />;
+        break;
+      default:
+      // code block
+  }
+
 
   return (
     <div className="App">
-      <h1>IA 2021!</h1>
+      <h1>IA 2021! Step {step}</h1>
       <IconSettings iconPath="/assets/icons">
 				<div className="slds-x-small-buttons_horizontal">
-					<Button label="Brand" variant="brand" />
-
 					<Button
-						disabled
-						label="Disabled"
-						onClick={() => {
-							console.log('Disabled Button Clicked');
-						}}
+						// disabled
+						label="Next Step"
+						onClick={nextStep}
 						variant="brand"
 					/>
-
-					<Button label="Destructive" variant="destructive" />
-
-					<Button label="Outline Brand" variant="outline-brand" />
-
-					<div
-						style={{
-							backgroundColor: '#16325c',
-							padding: '10px',
-							marginLeft: '5px',
-							display: 'inline-block',
-						}}
-						className="-m-horizontal--small"
-					>
-						<Button inverse label="Inverse" variant="base" />
-					</div>
+          <Button
+						// disabled
+						label="Reset"
+						onClick={resetSteps}
+						variant="brand"
+					/>
 				</div>
 			</IconSettings>
+      <div>
+        <h3>Section</h3>
+        {currentStep}
+      </div>
     </div>
   );
 }
