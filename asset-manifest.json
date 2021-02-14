@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ia-workshop-2021/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/ia-workshop-2021/static/js/main.f4dd44aa.chunk.js",
-    "main.js.map": "/ia-workshop-2021/static/js/main.f4dd44aa.chunk.js.map",
+    "main.css": "/ia-workshop-2021/static/css/main.810aacc8.chunk.css",
+    "main.js": "/ia-workshop-2021/static/js/main.4f21a994.chunk.js",
+    "main.js.map": "/ia-workshop-2021/static/js/main.4f21a994.chunk.js.map",
     "runtime-main.js": "/ia-workshop-2021/static/js/runtime-main.fcbafb0e.js",
     "runtime-main.js.map": "/ia-workshop-2021/static/js/runtime-main.fcbafb0e.js.map",
     "static/js/2.ea16bacc.chunk.js": "/ia-workshop-2021/static/js/2.ea16bacc.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.871db689.chunk.js": "/ia-workshop-2021/static/js/3.871db689.chunk.js",
     "static/js/3.871db689.chunk.js.map": "/ia-workshop-2021/static/js/3.871db689.chunk.js.map",
     "index.html": "/ia-workshop-2021/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/ia-workshop-2021/static/css/main.8c8b27cf.chunk.css.map",
+    "static/css/main.810aacc8.chunk.css.map": "/ia-workshop-2021/static/css/main.810aacc8.chunk.css.map",
     "static/js/2.ea16bacc.chunk.js.LICENSE.txt": "/ia-workshop-2021/static/js/2.ea16bacc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fcbafb0e.js",
     "static/js/2.ea16bacc.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.f4dd44aa.chunk.js"
+    "static/css/main.810aacc8.chunk.css",
+    "static/js/main.4f21a994.chunk.js"
   ]
 }
