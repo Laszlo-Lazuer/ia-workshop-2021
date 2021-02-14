@@ -1,0 +1,28 @@
+// Breakpoints
+$mobile: 484px;
+$tablet: 768px;
+$desktop: 1024px;
+
+
+
+.App {
+  width: $mobile;
+  margin: 0 auto;
+  border: 1px solid red;
+  margin-top: 10%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .App {
+    width: 768px; 
+    border-color: yellow;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .App {
+    width: $desktop; 
+    border-color: green;
+  }
+}

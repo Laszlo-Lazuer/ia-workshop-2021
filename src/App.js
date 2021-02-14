@@ -1,5 +1,5 @@
 import { useState} from 'react';
-import './App.css';
+import './App.scss';
 import {IconSettings, Button } from '@salesforce/design-system-react';
 import Landing from './Views/Landing/index';
 import Questions from './Views/Questions/index';
@@ -56,7 +56,7 @@ function App() {
 					/>
 				</div>
 			</IconSettings>
-      <div>
+      <div className='content-wrapper'>
         <h3>Section</h3>
         {currentStep}
       </div>
