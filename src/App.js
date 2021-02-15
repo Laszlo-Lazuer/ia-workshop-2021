@@ -4,6 +4,7 @@ import {IconSettings, Button } from '@salesforce/design-system-react';
 import Landing from './Views/Landing/index';
 import Questions from './Views/Questions/index';
 import Summary from './Views/Summary/index';
+import mainIcon from './icons/clipboard_icon.png';
 
 
 function App() {
@@ -59,6 +60,16 @@ function App() {
 				</div>
 			</IconSettings>
       <hr />
+      <div className="header-content">
+        <h2>Interview Questions</h2>
+        <div className="header-content--sub">
+          <div><img src={mainIcon} className="main-icon" /></div>
+          <div>
+            <div><p>Got Questions?</p></div>
+            <div><p>We've got practice...</p></div>
+          </div>
+        </div>
+      </div>
       <div className='content-wrapper'>
         {currentStep}
       </div>
