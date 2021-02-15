@@ -2,27 +2,40 @@
 $mobile: 484px;
 $tablet: 768px;
 $desktop: 1024px;
+$DEBUG: false;
 
-
+html,
+body {
+  background-color: #fff;
+}
 
 .App {
   width: $mobile;
   margin: 0 auto;
-  border: 1px solid red;
   margin-top: 10%;
+  @if $DEBUG {
+    border: 1px solid red;
+  }
 }
 
 
 @media only screen and (min-width: $tablet) {
   .App {
     width: 768px; 
-    border-color: yellow;
+    
+    @if $DEBUG {
+      border-color: yellow;
+    }
   }
 }
 
 @media only screen and (min-width: $desktop) {
   .App {
     width: $desktop; 
-    border-color: green;
+    
+    @if $DEBUG {
+      border-color: green;
+    }
+
   }
 }

@@ -10,10 +10,10 @@ function App() {
 
   const totalSteps = 3;
 
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   const resetSteps = () => {
-    setStep(0)
+    setStep(1)
   }
 
   const nextStep = () => {
@@ -23,13 +23,13 @@ function App() {
   let currentStep = <Landing />;
 
   switch(step) {
-    case 0:
+    case 1:
       currentStep = <Landing />;
       break;
-    case 1:
+    case 2:
       currentStep = <Questions />;
       break;
-    case 2:
+    case 3:
       currentStep = <Summary />;
         break;
       default:
@@ -39,6 +39,8 @@ function App() {
 
   return (
     <div className="App">
+     <hr />
+     <h2>DEBUG</h2>
       <h1>IA 2021! Step {step}</h1>
       <IconSettings iconPath="/assets/icons">
 				<div className="slds-x-small-buttons_horizontal">
@@ -56,8 +58,8 @@ function App() {
 					/>
 				</div>
 			</IconSettings>
+      <hr />
       <div className='content-wrapper'>
-        <h3>Section</h3>
         {currentStep}
       </div>
     </div>
