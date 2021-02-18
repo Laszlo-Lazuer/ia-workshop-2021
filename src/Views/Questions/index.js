@@ -1,9 +1,19 @@
+import { useContext } from 'react';
 import {Button, Card} from '@salesforce/design-system-react';
 import './styles.scss';
+import { appContext } from '../../context';
 
 function Questions() {
+    const {step, setStep, otherStep} = useContext(appContext);
+    const nextStep = () => {
+        setStep((step < 3)? step + 1: step)
+        console.log('Step: ', step)
+      }
     return (
         <>
+        <hr />
+        <p> Debug: Step {step}</p>
+        <hr />
         <div>
             <p>Read the question and relax and think about your answer. Make sure you keep in under 30 sec. You can always practice more.</p>
         </div>
@@ -25,11 +35,11 @@ function Questions() {
 					/>
 
                 <Button
-						// disabled
-						label="Next"
-						onClick={null}
-						variant="brand"
-					/>
+                        // disabled
+                        label="Increment"
+                        onClick={nextStep}
+                        variant="brand"
+                    />
                 </div>
             </div>
         </Card>
