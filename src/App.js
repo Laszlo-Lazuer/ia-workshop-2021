@@ -6,12 +6,12 @@ import Questions from './Views/Questions/index';
 import Summary from './Views/Summary/index';
 import mainIcon from './icons/clipboard_icon.png';
 import { NumberContext } from './context';
-import { appContext } from './context';
+import { appContext, UserContext } from './context';
 
 function App() {
 
   // Hooks
-  
+  const [message, setMessage] = useState("hello from context")
 
   const value = useContext(NumberContext);
   const totalSteps = 3;
@@ -30,19 +30,19 @@ function App() {
 
   let currentStep = <Landing />;
 
-  // switch(step) {
-  //   case 1:
-  //     currentStep = <Landing />;
-  //     break;
-  //   case 2:
-  //     currentStep = <Questions />;
-  //     break;
-  //   case 3:
-  //     currentStep = <Summary />;
-  //       break;
-  //     default:
-  //     // code block
-  // }
+  switch(step) {
+    case 1:
+      currentStep = <Landing />;
+      break;
+    case 2:
+      currentStep = <Questions />;
+      break;
+    case 3:
+      currentStep = <Summary />;
+        break;
+      default:
+      // code block
+  }
 
   const [appVals] = useState({
     step: step,
@@ -51,7 +51,7 @@ function App() {
   })
   
   return (
-    <appContext.Provider value={appVals}>
+    <UserContext.Provider value={{message, setMessage}}>
       <div className="App">
      <hr />
      <p>State: {step}</p>
@@ -88,7 +88,7 @@ function App() {
         {currentStep}
       </div>
     </div>
-    </appContext.Provider>
+    </UserContext.Provider>
   );
 }
 

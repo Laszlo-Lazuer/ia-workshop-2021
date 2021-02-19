@@ -10,3 +10,4 @@ export const NumberContext = createContext();
 
 export const appContext = createContext(null);
 
+export const UserContext = createContext(null);
