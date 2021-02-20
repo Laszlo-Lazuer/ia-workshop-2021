@@ -6,29 +6,15 @@ import Questions from './Views/Questions/index';
 import Summary from './Views/Summary/index';
 import mainIcon from './icons/clipboard_icon.png';
 import { NumberContext } from './context';
-import { appContext, UserContext } from './context';
+import { UserContext } from './context';
 
 function App() {
 
   // Hooks
   const [message, setMessage] = useState("hello from context")
-
-  const value = useContext(NumberContext);
-  const totalSteps = 3;
-
   const [step, setStep] = useState(1);
 
-  const resetSteps = () => {
-    setStep(1)
-  }
-
-  const nextStep = () => {
-    // setStep((currentStep < 4)? step + 1: step)
-    setStep(step+1)
-    console.log('Step: ', step)
-  }
-
-  let currentStep = <Landing />;
+  let currentStep;
 
   switch(step) {
     case 1:
@@ -41,53 +27,26 @@ function App() {
       currentStep = <Summary />;
         break;
       default:
-      // code block
+        console.log('error')
   }
-
-  const [appVals] = useState({
-    step: step,
-    otherStep: 2,
-    next: nextStep
-  })
   
   return (
-    <UserContext.Provider value={{message, setMessage}}>
+    <UserContext.Provider value={{message, setMessage, step, setStep}}>
       <div className="App">
-     <hr />
-     <p>State: {step}</p>
-     <h2>DEBUG</h2>
-      <h1>IA 2021! Step {step}</h1>
-      <IconSettings iconPath="/assets/icons">
-				<div className="slds-x-small-buttons_horizontal">
-					<Button
-						// disabled
-						label="Next Step"
-						onClick={nextStep}
-						variant="brand"
-					/>
-          <Button
-						// disabled
-						label="Reset"
-						onClick={resetSteps}
-						variant="brand"
-					/>
-				</div>
-			</IconSettings>
-      <hr />
-      <div className="header-content">
-        <h2>Interview Questions</h2>
-        <div className="header-content--sub">
-          <div><img src={mainIcon} className="main-icon" /></div>
-          <div>
-            <div><p>Got Questions?</p></div>
-            <div><p>We've got practice...</p></div>
+        <div className="header-content">
+          <h2>Interview Questions</h2>
+          <div className="header-content--sub">
+            <div><img src={mainIcon} className="main-icon" /></div>
+            <div>
+              <div><p>Got Questions?</p></div>
+              <div><p>We've got practice...</p></div>
+            </div>
           </div>
         </div>
+        <div className='content-wrapper'>
+          {currentStep}
+        </div>
       </div>
-      <div className='content-wrapper'>
-        {currentStep}
-      </div>
-    </div>
     </UserContext.Provider>
   );
 }

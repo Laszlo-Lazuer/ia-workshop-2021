@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import {Button, Card, IconSettings, Icon} from '@salesforce/design-system-react';
 import './styles.scss';
 import icon from '../../icons/summary_icon.png';
+import { UserContext } from '../../context';
 
 function Summary() {
+    const {step, setStep} = useContext(UserContext);
+
     return (
         <>
         <div>
@@ -22,12 +26,10 @@ function Summary() {
                     </div>
             </div>
                 <div>
-
-
                 <Button
 						// disabled
-						label="Reset"
-						onClick={null}
+						label="Start Over"
+						onClick={() => setStep(1)}
 						variant="brand"
 					/>
                 </div>

@@ -1,25 +1,13 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import {Button, Card} from '@salesforce/design-system-react';
-import './styles.scss';
 import { UserContext } from '../../context';
-// import { appContext } from '../../context';
+import './styles.scss';
 
 function Landing() {
-    // const {step, next, otherStep} = useContext(appContext);
-    const {message, setMessage} = useContext(UserContext);
+    const { step, setStep } = useContext(UserContext);
 
-
-    // const nextStep = () => {
-    //     setStep((step < 3)? step + 1: step)
-    //     console.log('Step: ', step)
-    //   }
-
-    //   useEffect(() => {
-    //   }, [step])
     return (
         <>
-        {/* <h1>Value: Step {step}, other step: {otherStep}</h1> */}
-        <h1>{message}</h1>
             <Card
                 id="ExampleCard"
                 heading={null}
@@ -31,8 +19,8 @@ function Landing() {
                 <div>
                 <Button
                         // disabled
-                        label="Set Message"
-                        onClick={() => setMessage('new message!')}
+                        label="Start"
+                        onClick={() => setStep(step+1)}
                         variant="brand"
                     />
                     </div>
