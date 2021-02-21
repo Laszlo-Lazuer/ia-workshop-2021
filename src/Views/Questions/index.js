@@ -18,8 +18,9 @@ function Questions() {
             <div className="card-content">
                 <div>
                 <h2 className="question">Q1:</h2>
+                <div className='quiz-content'>
                 <p className="questions-statement">What are three positive things your last boss would say about you?</p>
-                </div>
+                {/* </div> */}
                 <div className={'ctas'}>
                 <Button
 						// disabled
@@ -37,6 +38,7 @@ function Questions() {
                         variant="brand"
                     />
                 </div>
+                </div></div>                
             </div>
         </Card>
         </>
