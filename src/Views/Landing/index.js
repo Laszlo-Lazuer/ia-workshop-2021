@@ -7,17 +7,18 @@ function Landing() {
     const { step, setStep } = useContext(UserContext);
 
     return (
-        <>
+        <div className='landing-page'>
             <Card
                 id="ExampleCard"
                 heading={null}
             >
                 <div className="card-content">
                     <div>
-                        <h3>Are you ready for an interview?</h3>
+                        <h2 className={'landing-statement'}>Are you ready for an interview?</h2>
                     </div>
                 <div>
                 <Button
+                        className="cta"
                         // disabled
                         label="Start"
                         onClick={() => setStep(step+1)}
@@ -26,7 +27,7 @@ function Landing() {
                     </div>
                 </div>
             </Card>
-        </>
+        </div>
     );
 }
 

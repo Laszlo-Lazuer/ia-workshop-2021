@@ -13,16 +13,17 @@ function Questions() {
         </div>
         <Card
             id="ExampleCard"
-            heading="Releated Items"
+            heading=""
         >
             <div className="card-content">
                 <div>
-                <h3>Q1:</h3>
-                <p>What are three positive things your last boss would say about you?</p>
+                <h2 className="question">Q1:</h2>
+                <p className="questions-statement">What are three positive things your last boss would say about you?</p>
                 </div>
-                <div>
+                <div className={'ctas'}>
                 <Button
 						// disabled
+                        className="cta1"
 						label="Skip"
 						onClick={null}
 						variant="outline-brand"
@@ -30,6 +31,7 @@ function Questions() {
 
                 <Button
                         // disabled
+                        className="cta2"
                         label="Next"
                         onClick={() => setStep(step + 1)}
                         variant="brand"

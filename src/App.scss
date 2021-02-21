@@ -13,8 +13,19 @@ body {
   width: $mobile;
   margin: 0 auto;
   margin-top: 10%;
+  font-family: 'Open Sans', sans-serif;
+
   @if $DEBUG {
     border: 1px solid red;
+  }
+
+  .app-title {
+    color: #1b5dab;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 27px;
+
+
   }
 }
 

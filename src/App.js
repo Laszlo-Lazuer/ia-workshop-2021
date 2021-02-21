@@ -34,7 +34,7 @@ function App() {
     <UserContext.Provider value={{message, setMessage, step, setStep}}>
       <div className="App">
         <div className="header-content">
-          <h2>Interview Questions</h2>
+          <h1 className={'app-title'}>Interview Questions</h1>
           <div className="header-content--sub">
             <div><img src={mainIcon} className="main-icon" /></div>
             <div>
