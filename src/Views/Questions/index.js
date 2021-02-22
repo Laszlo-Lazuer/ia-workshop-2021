@@ -14,6 +14,7 @@ function Questions() {
         <Card
             id="ExampleCard"
             heading=""
+            className="ia-card"
         >
             <div className="card-content">
                 <div>
