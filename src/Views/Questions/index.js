@@ -1,10 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {Button, Card} from '@salesforce/design-system-react';
 import { UserContext } from '../../context';
 import './styles.scss';
 
 function Questions() {
-    const { step, setStep } = useContext(UserContext);
+    const { step, setStep, questions } = useContext(UserContext);
+    const [questionCurrent, setQuestionCurrent] = useState(1);
+
+    const changeQuestion = () => {
+        const min = 1;
+        const max = 16;
+        const rand = Math.floor(min + Math.random() * (max - min));
+        setQuestionCurrent(rand)
+    }
+
+    let question = questions[`${questionCurrent}`]
 
     return (
         <>
@@ -18,21 +28,18 @@ function Questions() {
         >
             <div className="card-content">
                 <div>
-                <h2 className="question">Q1:</h2>
+                <h2 className="question">Q:</h2>
                 <div className='quiz-content'>
-                <p className="questions-statement">What are three positive things your last boss would say about you?</p>
-                {/* </div> */}
+                <p className="questions-statement">{question}</p>
                 <div className={'ctas'}>
                 <Button
-						// disabled
                         className="cta1"
 						label="Skip"
-						onClick={null}
+						onClick={changeQuestion}
 						variant="outline-brand"
 					/>
 
                 <Button
-                        // disabled
                         className="cta2"
                         label="Next"
                         onClick={() => setStep(step + 1)}
