@@ -1,0 +1,19 @@
+.summary-content {
+    display:flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 33px;
+
+    .logo-copy {
+        align-self: center;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 27px;
+        margin-left: 21px;
+    }
+}
+    .summary-cta {
+        display: flex;
+        justify-content: center;
+        margin-left: 41%;
+    }

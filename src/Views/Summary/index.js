@@ -9,26 +9,23 @@ function Summary() {
 
     return (
         <>
-        <div>
-            <p>Well, now you have a experience under your belt and what can I say. You did it, this is the first start to really practice your questions. You can always come back and try again.</p>
-        </div>
         <Card
             id="ExampleCard"
             heading={null}
         >
             <div className="card-content">
-                <div>
-					<div className="slds-col_padded">
+                <div className={"summary-content"}>
+					<div>
                         <img src={icon} className='summary-icon' />
 					</div>
-                    <div>
-                        <p>Thanks for stopping by</p>
+                    <div className={'logo-copy'}>
+                        <p>Thanks for stopping by!</p>
                     </div>
             </div>
-                <div>
+                <div className={'summary-cta'} style={{display: 'flex'}}>
                 <Button
 						// disabled
-						label="Start Over"
+						label="Restart"
 						onClick={() => setStep(1)}
 						variant="brand"
 					/>
