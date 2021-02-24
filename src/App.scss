@@ -20,6 +20,21 @@ body {
     border: 1px solid red;
   }
 
+  .badge-text {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .app-badge {
+    margin-left: 2%;
+  }
+
+.header-content {
+  &--sub {
+    display: flex;
+  }
+}
+
   .app-title {
     color: #1b5dab;
     font-weight: 600;
