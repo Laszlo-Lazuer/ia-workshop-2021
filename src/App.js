@@ -37,11 +37,14 @@ function App() {
           <h1 className={'app-title'}>Interview Questions</h1>
           <div className="header-content--sub">
             <div><img src={mainIcon} className="main-icon" /></div>
-            <div>
+            <div classname="app-badge" style={{marginBottom: '48px'}}>
               <div><p>Got Questions?</p></div>
               <div><p>We've got practice...</p></div>
             </div>
           </div>
+        </div>
+        <div className="app-statement">
+          <p>This is a rapid fire exercise to help you to be on your feet when you talk about interview. At the bottom there will be a question for you and you have 30 secs to answer it. This will help you to be on your toes to answer them in a fast order.</p>
         </div>
         <div className='content-wrapper'>
           {currentStep}
