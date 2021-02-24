@@ -18,19 +18,19 @@ function Questions() {
 
     return (
         <>
-        <div>
+        {/* <div>
             <p>Read the question and relax and think about your answer. Make sure you keep in under 30 sec. You can always practice more.</p>
-        </div>
+        </div> */}
         <Card
-            id="ExampleCard"
+            id="questionCard"
             heading=""
-            className="ia-card"
+            className={'ia-card'}
         >
             <div className="card-content">
                 <div>
                 <h2 className="question">Q:</h2>
                 <div className='quiz-content'>
-                <p className="questions-statement">{question}</p>
+                <p className="card-statement">{question}</p>
                 <div className={'ctas'}>
                 <Button
                         className="cta1"

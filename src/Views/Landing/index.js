@@ -9,17 +9,17 @@ function Landing() {
     return (
         <div className='landing-page'>
             <Card
-                id="ExampleCard"
+                id="readyCar"
                 heading={null}
+                className={'ia-card'}
             >
                 <div className="card-content">
                     <div>
-                        <h2 className={'landing-statement'}>Are you ready for an interview?</h2>
+                        <h2 className={'card-statement'}>Are you ready for an interview?</h2>
                     </div>
                 <div>
                 <Button
                         className="cta"
-                        // disabled
                         label="Start"
                         onClick={() => setStep(step+1)}
                         variant="brand"

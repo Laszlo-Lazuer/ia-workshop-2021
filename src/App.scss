@@ -7,6 +7,7 @@ $DEBUG: false;
 html,
 body {
   background-color: #fff;
+
 }
 
 .App {
@@ -15,6 +16,8 @@ body {
   margin-top: 10%;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 10%;
+  padding: 36px;
+  width: 100%;
 
   @if $DEBUG {
     border: 1px solid red;
@@ -51,9 +54,16 @@ body {
   }
 
   .ia-card {
+    margin: 0 auto;
     margin-bottom: 10%;
-    height: 274px;
-    max-width: 20px;
+    // height: 274px;
+    max-width: 100%;
+  }
+
+  .card-statement {
+    text-align: left;
+    font-size: 24;
+    line-height: 27px;
   }
 }
 
@@ -64,6 +74,12 @@ body {
     @if $DEBUG {
       border-color: yellow;
     }
+
+    .card-statement {
+      text-align: center;
+      line-height: 27px;
+    }
+  
   }
 }
 
@@ -73,6 +89,10 @@ body {
     
     @if $DEBUG {
       border-color: green;
+    }
+    .card-statement {
+      text-align: center;
+      line-height: 27px;
     }
 
   }

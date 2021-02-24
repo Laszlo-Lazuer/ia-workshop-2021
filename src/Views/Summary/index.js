@@ -10,8 +10,9 @@ function Summary() {
     return (
         <>
         <Card
-            id="ExampleCard"
+            id="summaryCard"
             heading={null}
+            className={'ia-card'}
         >
             <div className="card-content">
                 <div className={"summary-content"}>
