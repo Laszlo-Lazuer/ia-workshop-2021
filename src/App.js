@@ -13,6 +13,25 @@ function App() {
   const [message, setMessage] = useState("hello from context")
   const [step, setStep] = useState(1);
 
+  let questionArray = [
+    'What are three positive things your last boss would say about you?',
+    'Describe your design process and what methods you follow?',
+    'What are the some of the biggest challenges you face as a UX designer?',
+    'What are some of the biggest trends in the UX Design industry right now?',
+    'When a client says, “I don’t like this design” What do you do?',
+    'Can you walk me through a design example where you set out to solve a business problem?',
+    'How do you know when a project is finish?',
+    'What are the difference between designing for desktop and mobile devices?',
+    'What are the biggest challenges as a UX designer?',
+    'Have you worked in the lean or agile process environment before?',
+    'How did you get into UX Design?',
+    'What tools do you use?',
+    'Why are interested in this company?',
+    'What makes you want to leave your current job?',
+    'What do you do when you are struggling to find inspiration?',
+    'How do you help someone understand your perspective if they are not on the same page with the design?',
+  ]
+
   let questions = {
     '1': 'What are three positive things your last boss would say about you?',
     '2': 'Describe your design process and what methods you follow?',
@@ -53,7 +72,7 @@ function App() {
   }
   
   return (
-    <UserContext.Provider value={{message, setMessage, step, setStep, questions}}>
+    <UserContext.Provider value={{message, setMessage, step, setStep, questions, questionArray}}>
       {/* <IconSettings iconPath="/assets/icons"> */}
       <div className="App">
         <div className="header-content">
