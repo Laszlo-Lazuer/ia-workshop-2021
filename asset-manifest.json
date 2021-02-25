@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ia-workshop-2021/static/css/main.65820f00.chunk.css",
-    "main.js": "/ia-workshop-2021/static/js/main.657a8940.chunk.js",
-    "main.js.map": "/ia-workshop-2021/static/js/main.657a8940.chunk.js.map",
+    "main.js": "/ia-workshop-2021/static/js/main.f215e018.chunk.js",
+    "main.js.map": "/ia-workshop-2021/static/js/main.f215e018.chunk.js.map",
     "runtime-main.js": "/ia-workshop-2021/static/js/runtime-main.b2c7dcec.js",
     "runtime-main.js.map": "/ia-workshop-2021/static/js/runtime-main.b2c7dcec.js.map",
     "static/js/2.9568f86e.chunk.js": "/ia-workshop-2021/static/js/2.9568f86e.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b2c7dcec.js",
     "static/js/2.9568f86e.chunk.js",
     "static/css/main.65820f00.chunk.css",
-    "static/js/main.657a8940.chunk.js"
+    "static/js/main.f215e018.chunk.js"
   ]
 }
