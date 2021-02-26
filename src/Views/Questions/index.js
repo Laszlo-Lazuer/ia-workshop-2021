@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import {Button, Card} from '@salesforce/design-system-react';
+import {Button, Card, ProgressRing, IconSettings} from '@salesforce/design-system-react';
 import { UserContext } from '../../context';
 import './styles.scss';
 
@@ -7,6 +7,11 @@ function Questions() {
     const { step, setStep, questions, questionArray } = useContext(UserContext);
     const [questionCurrent, setQuestionCurrent] = useState(1);
     const [questionNum, setQuestionNum] = useState(1);
+    const [progress, setProgress] = useState(100);
+
+    const updateProgress = () => {
+        setProgress((progress != 0)?progress-10:100)
+    }
 
     const changeQuestion = () => {
         questionArray.splice(questionCurrent, 1);
@@ -49,7 +54,33 @@ function Questions() {
                         onClick={() => setStep(step + 1)}
                         variant="brand"
                     />
+
+                    
+                <Button
+                        className="cta2"
+                        label="+"
+                        onClick={updateProgress}
+                        variant="brand"
+                    />
+
+<IconSettings iconPath="/assets/icons">
+				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
+					{/* <div className="slds-col_padded">
+						<ProgressRing value={0} />
+					</div>
+					<div className="slds-col_padded">
+						<ProgressRing value={20} />
+					</div>
+					<div className="slds-col_padded">
+						<ProgressRing flowDirection="fill" size="large" value={40} />
+					</div> */}
+					<div className="slds-col_padded">
+						<ProgressRing size="large" value={progress} flowDirection="fill" />
+					</div>
+				</div>
+                </IconSettings>
                 </div>
+
                 </div></div>                
             </div>
         </Card>
