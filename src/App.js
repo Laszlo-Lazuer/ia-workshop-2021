@@ -11,7 +11,7 @@ function App() {
 
   // Hooks
   const [message, setMessage] = useState("hello from context")
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   let questionArray = [
     'What are three positive things your last boss would say about you?',

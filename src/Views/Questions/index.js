@@ -8,9 +8,28 @@ function Questions() {
     const [questionCurrent, setQuestionCurrent] = useState(1);
     const [questionNum, setQuestionNum] = useState(1);
     const [progress, setProgress] = useState(100);
+    const [newSession, setNewSession] = useState(true);
+    const [timesUp, setTimesUp] = useState(false);
+
+    // Timer
+    const [seconds, setSeconds] = useState(30);
+    const [isActive, setIsActive] = useState(false);
+
+    const toggle = () => {
+        setIsActive(!isActive);
+        (newSession) && setNewSession(false);
+        setTimesUp(false)
+      }
+    
+      const reset = () => {
+        setSeconds(30);
+        setIsActive(false);
+        setTimesUp(true)
+      }
+    // Timer
 
     const updateProgress = () => {
-        setProgress((progress != 0)?progress-10:100)
+        setProgress((progress !== 0)?progress-10:100)
     }
 
     const changeQuestion = () => {
@@ -20,15 +39,30 @@ function Questions() {
         const max = questionArray.length -1;
         const rand = Math.floor(min + Math.random() * (max - min));
         setQuestionCurrent(rand)
+        toggle()
+
     }
 
     let question = questionArray[`${questionCurrent}`];//questions[`${questionCurrent}`]
 
+    useEffect(() => {
+        let interval = null;
+        if (isActive) {
+          interval = setInterval(() => {
+            setSeconds((seconds > 1)? seconds - 1: reset);
+          }, 1000);
+          setProgress((seconds/30)*100)
+        } else if (!isActive && seconds !== 0) {
+          clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+      }, [isActive, seconds]);
+
+      const timerSeconds = (seconds < 10) ? `0${seconds}`:`${seconds}`;
+      const nextBtnString = (timesUp)?"Next Question":"Skip Question";
+
     return (
         <>
-        {/* <div>
-            <p>Read the question and relax and think about your answer. Make sure you keep in under 30 sec. You can always practice more.</p>
-        </div> */}
         <Card
             id="questionCard"
             heading=""
@@ -36,15 +70,30 @@ function Questions() {
         >
             <div className="card-content">
                 <div>
-                <h2 className="question">{(questionNum > 15)? '':`Q${questionNum}:`}</h2>
+                    <div>
+                    <IconSettings iconPath="/assets/icons">
+				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
+					<div className="slds-col_padded" style={{position:'relative'}}>
+						<ProgressRing size="large" value={progress} flowDirection="drain" />
+                        <p style={{position:'absolute', top: '3px', left: '19px', fontSize: '17px', textAlign: 'center'}}>{timerSeconds}</p>
+					</div>
+				</div>
+                </IconSettings>
+
+                    </div>
+                {/* <h2 className="question">{(questionNum > 15)? '':`Q${questionNum}:`}</h2> */}
                 <div className='quiz-content'>
-                <p className="card-statement">{(questionNum > 15)? "You're Hired!":question}</p>
+                {(timesUp) ?
+                <p className="card-statement">Time is up!</p>
+                :
+                <p className="card-statement">{(questionNum > 15)? "You're Hired!":`Q${questionNum}: ${question}`}</p>
+            }
                 <div className={'ctas'}>
                 <Button
                         disabled={(questionNum > 15)? true:false}
                         className="cta1"
-						label="Skip Question"
-						onClick={changeQuestion}
+						label={(newSession)?"Begin":nextBtnString}
+						onClick={(newSession)?toggle:changeQuestion}
 						variant="outline-brand"
 					/>
 
@@ -53,32 +102,21 @@ function Questions() {
                         label="Done"
                         onClick={() => setStep(step + 1)}
                         variant="brand"
-                    />
+                   />
+                    <hr />
+                    <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
+          {isActive ? 'Pause' : 'Start'}
+        </button>
+        {/* <p>seconds: {seconds}</p> */}
+                    <hr />
 
-                    
-                <Button
-                        className="cta2"
-                        label="+"
-                        onClick={updateProgress}
-                        variant="brand"
-                    />
-
-<IconSettings iconPath="/assets/icons">
+            {/* <IconSettings iconPath="/assets/icons">
 				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
-					{/* <div className="slds-col_padded">
-						<ProgressRing value={0} />
-					</div>
-					<div className="slds-col_padded">
-						<ProgressRing value={20} />
-					</div>
-					<div className="slds-col_padded">
-						<ProgressRing flowDirection="fill" size="large" value={40} />
-					</div> */}
 					<div className="slds-col_padded">
 						<ProgressRing size="large" value={progress} flowDirection="fill" />
 					</div>
 				</div>
-                </IconSettings>
+                </IconSettings> */}
                 </div>
 
                 </div></div>                
