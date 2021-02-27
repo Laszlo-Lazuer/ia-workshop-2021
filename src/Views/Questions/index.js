@@ -73,9 +73,15 @@ function Questions() {
                     <div>
                     <IconSettings iconPath="/assets/icons">
 				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
-					<div className="slds-col_padded" style={{position:'relative'}}>
-						<ProgressRing size="large" value={progress} flowDirection="drain" />
-                        <p style={{width: '20px',position:'absolute', top: '3px', left: '19px', fontSize: '17px', textAlign: 'center'}}>{(timesUp)?'-':timerSeconds}</p>
+                <div className="slds-col_padded" style={{position:'relative'}}>
+					{ (questionNum > 15)?
+                    <div style={{marginBottom: '50px'}} />
+                    :
+						<>
+                            <ProgressRing size="large" value={progress} flowDirection="drain" />
+                            <p style={{width: '20px',position:'absolute', top: '3px', left: '19px', fontSize: '17px', textAlign: 'center'}}>{(timesUp)?'-':timerSeconds}</p>
+                        </>
+                    }
 					</div>
 				</div>
                 </IconSettings>
