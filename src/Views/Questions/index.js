@@ -62,7 +62,7 @@ function Questions() {
       const nextBtnString = (timesUp)?"Next Question":"Skip Question";
 
     return (
-        <>
+        <div className="quiz">
         <Card
             id="questionCard"
             heading=""
@@ -104,10 +104,11 @@ function Questions() {
                         variant="brand"
                    />
                 </div>
-                </div></div>                
+                </div>
+                </div>                
             </div>
         </Card>
-        </>
+        </div>
     );
 }
 
