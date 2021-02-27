@@ -16,40 +16,21 @@ function App() {
   let questionArray = [
     'What are three positive things your last boss would say about you?',
     'Describe your design process and what methods you follow?',
-    'What are the some of the biggest challenges you face as a UX designer?',
+    'What are some of the biggest challenges you face as a UX designer?',
     'What are some of the biggest trends in the UX Design industry right now?',
-    'When a client says, “I don’t like this design” What do you do?',
+    'When a client says, “I don’t like this design” what do you do?',
     'Can you walk me through a design example where you set out to solve a business problem?',
-    'How do you know when a project is finish?',
-    'What are the difference between designing for desktop and mobile devices?',
+    'How do you know when a project is finished?',
+    'What are the differences between designing for desktop and mobile devices?',
     'What are the biggest challenges as a UX designer?',
     'Have you worked in the lean or agile process environment before?',
     'How did you get into UX Design?',
     'What tools do you use?',
-    'Why are interested in this company?',
+    'Why are you interested in this company?',
     'What makes you want to leave your current job?',
     'What do you do when you are struggling to find inspiration?',
     'How do you help someone understand your perspective if they are not on the same page with the design?',
   ]
-
-  let questions = {
-    '1': 'What are three positive things your last boss would say about you?',
-    '2': 'Describe your design process and what methods you follow?',
-    '3': 'What are the some of the biggest challenges you face as a UX designer?',
-    '4': 'What are some of the biggest trends in the UX Design industry right now?',
-    '5': 'When a client says, “I don’t like this design” What do you do?',
-    '6': 'Can you walk me through a design example where you set out to solve a business problem?',
-    '7': 'How do you know when a project is finish?',
-    '8': 'What are the difference between designing for desktop and mobile devices?',
-    '9': 'What are the biggest challenges as a UX designer?',
-    '10': 'Have you worked in the lean or agile process environment before?',
-    '11': 'How did you get into UX Design?',
-    '12': 'What tools do you use?',
-    '13': 'Why are interested in this company?',
-    '14': 'What makes you want to leave your current job?',
-    '15': 'What do you do when you are struggling to find inspiration?',
-    '16': 'How do you help someone understand your perspective if they are not on the same page with the design?',
-  }
 
   let currentStep;
   let cardStatement = "";
@@ -57,22 +38,22 @@ function App() {
   switch(step) {
     case 1:
       currentStep = <Landing />;
-      cardStatement = "This is a rapid fire exercise to help you to be on your feet when you talk about interview. At the bottom there will be a question for you and you have 30 secs to answer it. This will help you to be on your toes to answer them in a fast order.";
+      cardStatement = "This is a rapid fire exercise to help you stay on your feet in an interview. At the bottom there will be a question for you and you will have 30 seconds to answer. This will help you to answer actual interview questions in fast order.";
       break;
     case 2:
       currentStep = <Questions />;
-      cardStatement = "Read the question and relax and think about your answer. Make sure you keep in under 30 sec. You can always practice more.";
+      cardStatement = "Read the question, relax and think about your answer. Make sure you keep it under 30 seconds. You can always practice more in the future.";
       break;
     case 3:
       currentStep = <Summary />;
-      cardStatement = "Well, now you have a experience under your belt and what can I say. You did it, this is the first start to really practice your questions. You can always come back and try again.";
+      cardStatement = "Well, you now have some experience under your belt and, what can I say, you did it!  This is the first step toward honing your interview skills. You can always come back and practice more.";
         break;
       default:
         console.log('error')
   }
   
   return (
-    <UserContext.Provider value={{message, setMessage, step, setStep, questions, questionArray}}>
+    <UserContext.Provider value={{message, setMessage, step, setStep, questionArray}}>
       <div className="App">
         <div className="header-content">
           <h1 className={'app-title'}>Interview Questions</h1>
