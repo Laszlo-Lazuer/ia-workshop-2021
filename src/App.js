@@ -11,7 +11,7 @@ function App() {
 
   // Hooks
   const [message, setMessage] = useState("hello from context")
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   let questionArray = [
     'What are three positive things your last boss would say about you?',
@@ -73,22 +73,14 @@ function App() {
   
   return (
     <UserContext.Provider value={{message, setMessage, step, setStep, questions, questionArray}}>
-      {/* <IconSettings iconPath="/assets/icons"> */}
       <div className="App">
         <div className="header-content">
           <h1 className={'app-title'}>Interview Questions</h1>
           <div className="header-content--sub">
             <div>
-              <img src={mainIcon} className="main-icon" />
-              {/* <Icon
-							assistiveText={{ label: 'Account' }}
-							colorVariant="base"
-              category="utility"
-							name="announcement"
-							size="medium"
-						/> */}
+              <img src={mainIcon} alt='' className="main-icon" />
               </div>
-            <div classname="app-badge" style={{marginBottom: '48px', marginLeft: '9px'}}>
+            <div className="app-badge" style={{marginBottom: '48px', marginLeft: '9px'}}>
               <p className={'badge-text'}>Got Questions?</p>
               <p className={'badge-text'}>We've got practice...</p>
             </div>

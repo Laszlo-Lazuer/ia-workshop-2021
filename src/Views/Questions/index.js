@@ -4,7 +4,7 @@ import { UserContext } from '../../context';
 import './styles.scss';
 
 function Questions() {
-    const { step, setStep, questions, questionArray } = useContext(UserContext);
+    const { step, setStep, questionArray } = useContext(UserContext);
     const [questionCurrent, setQuestionCurrent] = useState(1);
     const [questionNum, setQuestionNum] = useState(1);
     const [progress, setProgress] = useState(100);
@@ -26,11 +26,6 @@ function Questions() {
         setIsActive(false);
         setTimesUp(true)
       }
-    // Timer
-
-    const updateProgress = () => {
-        setProgress((progress !== 0)?progress-10:100)
-    }
 
     const changeQuestion = () => {
         questionArray.splice(questionCurrent, 1);
@@ -39,7 +34,12 @@ function Questions() {
         const max = questionArray.length -1;
         const rand = Math.floor(min + Math.random() * (max - min));
         setQuestionCurrent(rand)
-        toggle()
+        
+        if (!timesUp) {
+            setSeconds(30)
+        } else {
+            toggle()
+        }
 
     }
 
@@ -75,7 +75,7 @@ function Questions() {
 				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
 					<div className="slds-col_padded" style={{position:'relative'}}>
 						<ProgressRing size="large" value={progress} flowDirection="drain" />
-                        <p style={{position:'absolute', top: '3px', left: '19px', fontSize: '17px', textAlign: 'center'}}>{timerSeconds}</p>
+                        <p style={{width: '20px',position:'absolute', top: '3px', left: '19px', fontSize: '17px', textAlign: 'center'}}>{(timesUp)?'-':timerSeconds}</p>
 					</div>
 				</div>
                 </IconSettings>
@@ -103,22 +103,7 @@ function Questions() {
                         onClick={() => setStep(step + 1)}
                         variant="brand"
                    />
-                    <hr />
-                    <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-          {isActive ? 'Pause' : 'Start'}
-        </button>
-        {/* <p>seconds: {seconds}</p> */}
-                    <hr />
-
-            {/* <IconSettings iconPath="/assets/icons">
-				<div className="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center">
-					<div className="slds-col_padded">
-						<ProgressRing size="large" value={progress} flowDirection="fill" />
-					</div>
-				</div>
-                </IconSettings> */}
                 </div>
-
                 </div></div>                
             </div>
         </Card>

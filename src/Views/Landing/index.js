@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import {Button, Card} from '@salesforce/design-system-react';
+import { Button, Card } from '@salesforce/design-system-react';
 import { UserContext } from '../../context';
 import './styles.scss';
 
@@ -10,7 +10,7 @@ function Landing() {
         <div className='landing-page'>
             <Card
                 id="readyCar"
-                heading={null}
+                heading={''}
                 className={'ia-card'}
             >
                 <div className="card-content">

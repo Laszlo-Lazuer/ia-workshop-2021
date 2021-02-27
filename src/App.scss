@@ -13,7 +13,7 @@ body {
 .App {
   width: $mobile;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 0;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 10%;
   padding: 36px;
@@ -56,8 +56,8 @@ body {
   .ia-card {
     margin: 0 auto;
     margin-bottom: 10%;
-    // height: 274px;
     max-width: 100%;
+    height: 367px;
   }
 
   .card-statement {
