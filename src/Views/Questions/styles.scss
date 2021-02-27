@@ -41,7 +41,8 @@ $tablet: 768px;
         position: absolute;
         bottom: 32px;
         display: inline-block;
-        // align-self:flex-end;
+        width: 270px;
+        text-align: right;
     }
     .cta1 {
         margin-right: 8px;
